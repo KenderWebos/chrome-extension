@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FocusMan v1.0</title>
+    <title>HeriTech - FocusAPP</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -10,22 +10,21 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <!-- Include Font Awesome -->
-    <!-- <link
+    <!-- Incluir Font Awesome -->
+    <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5/8eFfF8Wq82MR/Wh44bY3X+XMRD7lZMQWESOKpVxCEUVJjchvO6KOy7/kkb4Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    /> -->
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
 
-  <body>    
-
+  <body>
     <center class="p-4">
-      <!-- <p>FocusMan 1.1</p> -->
-      <img class="logo" src="focusman-logo.png" alt="logo">
-      <small>FocusMan 1.1</small>
+      <!-- Agregar los círculos -->
+      <div class="circle-container m-4">
+        <div class="circle-black">
+          <div class="circle-white" id="eye"></div>
+        </div>
+      </div>
 
       <input
         class="input-text"
@@ -34,12 +33,47 @@
         id="search-bar"
         placeholder="¿Qué vamos a buscar hoy?"
       />
-      <button class="btn btn-danger" id="youtube-search">
-        YouTube
-      </button>
-      <button class="btn btn-dark" id="tiktok-search">
-        TikTok
-      </button>
+
+      <!-- Contenedor de la grilla -->
+      <div class="row mt-3">
+        <!-- Fila 1 -->
+        <div class="col-6 mb-2">
+          <button class="btn btn-danger w-100" id="youtube-search">
+            <i class="fab fa-youtube"></i> YouTube
+          </button>
+        </div>
+        <div class="col-6 mb-2">
+          <button class="btn btn-dark w-100" id="tiktok-search">
+            <i class="fab fa-tiktok"></i> TikTok
+          </button>
+        </div>
+
+        <!-- Fila 2 -->
+        <div class="col-6 mb-2">
+          <button class="btn btn-primary w-100" id="google-search">
+            <i class="fab fa-google"></i> Google
+          </button>
+        </div>
+        <div class="col-6 mb-2">
+          <button class="btn btn-info w-100" id="xcom-search">
+            <i class="fab fa-twitter"></i> X.com
+          </button>
+        </div>
+
+        <!-- Fila 3 -->
+        <div class="col-6 mb-2">
+          <button class="btn btn-warning w-100" id="reddit-search">
+            <i class="fab fa-reddit"></i> Reddit
+          </button>
+        </div>
+        <div class="col-6 mb-2">
+          <button class="btn btn-success w-100" id="chatgpt-search">
+            <i class="fab fa-openai"></i> ChatGPT
+          </button>
+        </div>
+      </div>
+      <img class="logo" src="focusman-logo.png" alt="logo" />
+      <small>HT - FocusAPP</small>
     </center>
 
     <script src="script.js"></script>

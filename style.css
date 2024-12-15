@@ -13,11 +13,54 @@ body {
 }
 
 .logo {
-  width: 50px;
-  margin: 10px;
+  width: 25px;
 }
 
 .input-text {
   border-radius: 30px;
   text-align: center;
+}
+
+/* Círculos */
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-black {
+  width: 160px; /* Tamaño del círculo negro */
+  height: 160px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Posicionamiento relativo para el círculo blanco */
+}
+
+.circle-white {
+  width: 99px; /* 61.8% de 160px */
+  height: 99px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute; /* Posiciona el círculo blanco de forma absoluta dentro del negro */
+  bottom: 0; /* Lo alinea en la parte inferior */
+  animation: eyeMovement 6s infinite; /* Duración de la animación 1s, repite cada 6 segundos con un retraso de 5 segundos */
+}
+
+/* Animación de movimiento */
+@keyframes eyeMovement {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(30px) translateY(-30px); /* Mueve hacia la parte superior derecha */
+  }
+  75% {
+    transform: translateX(-30px) translateY(-30px); /* Mueve hacia la parte superior izquierda */
+  }
+  100% {
+    transform: translateX(0) translateY(0); /* Regresa al centro */
+  }
 }
