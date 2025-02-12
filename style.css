@@ -1,5 +1,8 @@
+/* Estilos generales */
 body {
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 #search-bar {
@@ -21,6 +24,17 @@ body {
   text-align: center;
 }
 
+/* Variables de color */
+:root {
+  --youtube-red: #FF0000;
+  --youtube-red-dark: #cc0000;
+  --tiktok-black: #000000;
+  --tiktok-black-dark: #333333;
+  --google-blue: #4285F4;
+  --google-blue-dark: #3367D6;
+  --white: white;
+}
+
 /* Círculos */
 .circle-container {
   display: flex;
@@ -29,38 +43,82 @@ body {
 }
 
 .circle-black {
-  width: 160px; /* Tamaño del círculo negro */
+  width: 160px;
   height: 160px;
   background-color: black;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Posicionamiento relativo para el círculo blanco */
+  position: relative;
 }
 
 .circle-white {
-  width: 99px; /* 61.8% de 160px */
+  width: 99px;
   height: 99px;
   background-color: white;
   border-radius: 50%;
-  position: absolute; /* Posiciona el círculo blanco de forma absoluta dentro del negro */
-  bottom: 0; /* Lo alinea en la parte inferior */
-  animation: eyeMovement 6s infinite; /* Duración de la animación 1s, repite cada 6 segundos con un retraso de 5 segundos */
+  position: absolute;
+  bottom: 0;
+  animation: eyeMovement 6s infinite;
 }
 
 /* Animación de movimiento */
 @keyframes eyeMovement {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translate(0, 0);
   }
   25% {
-    transform: translateX(30px) translateY(-30px); /* Mueve hacia la parte superior derecha */
+    transform: translate(30px, -30px);
   }
   75% {
-    transform: translateX(-30px) translateY(-30px); /* Mueve hacia la parte superior izquierda */
+    transform: translate(-30px, -30px);
   }
   100% {
-    transform: translateX(0) translateY(0); /* Regresa al centro */
+    transform: translate(0, 0);
   }
+}
+
+/* Colores y transiciones de los botones */
+button {
+  color: var(--white);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#youtube-search {
+  background-color: var(--youtube-red);
+}
+
+#youtube-search:hover {
+  background-color: var(--youtube-red-dark);
+  transform: scale(1.05);
+}
+
+#tiktok-search {
+  background-color: var(--tiktok-black);
+}
+
+#tiktok-search:hover {
+  background-color: var(--tiktok-black-dark);
+  transform: scale(1.05);
+}
+
+#google-maps-search {
+  background-color: var(--google-blue);
+}
+
+#google-maps-search:hover {
+  background-color: var(--google-blue-dark);
+  transform: scale(1.05);
+}
+
+/* Estilo para los íconos de las aplicaciones */
+#youtube-search i,
+#tiktok-search i,
+#google-maps-search i {
+  color: var(--white);
 }
