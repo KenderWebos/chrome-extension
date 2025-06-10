@@ -1,24 +1,28 @@
 {
-    "name": "FocusMan",
-    "version": "1.0",
-    "description": "a simple extension for be more concentrate",
-    "manifest_version": 3,
-  
-    "permissions": [
-      "activeTab",
-      "storage",
-      "scripting"
-    ],
-  
-    "action": {
-      "default_popup": "popup.html"
-    },
-  
-    "icons": {
-      "16": "heritech_logo_white.png",
-      "32": "heritech_logo_white.png",
-      "48": "heritech_logo_white.png",
-      "128": "heritech_logo_white.png"
+  "name": "FocusMan",
+  "version": "1.0",
+  "description": "a simple extension for be more concentrate",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "heritech_logo_white.png",
+    "32": "heritech_logo_white.png",
+    "48": "heritech_logo_white.png",
+    "128": "heritech_logo_white.png"
+  },
+  "commands": {
+    "abrir-extension": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E"
+      },
+      "description": "Abrir la extensión"
     }
   }
-  
+}

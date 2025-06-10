@@ -69,3 +69,20 @@ function initializeEventListeners() {
 
 // Iniciar cuando la página cargue
 document.addEventListener('DOMContentLoaded', initializeEventListeners);
+
+// Función para abrir la ventana centrada
+document.getElementById('open-center-popup').addEventListener('click', function() {
+    const width = 400;
+    const height = 300;
+    const left = Math.round((screen.width - width) / 2);
+    const top = Math.round((screen.height - height) / 2);
+
+    chrome.windows.create({
+        url: 'center-popup.html',
+        type: 'popup',
+        width: width,
+        height: height,
+        left: left,
+        top: top
+    });
+});
