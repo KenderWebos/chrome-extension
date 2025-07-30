@@ -2,12 +2,14 @@ const searchBar = document.getElementById('search-bar');
 const btnYouTube = document.getElementById('youtube-search');
 const btnTikTok = document.getElementById('tiktok-search');
 const btnGoogleMaps = document.getElementById('google-maps-search');
+const btnCronoTimer = document.getElementById('crono-timer');
 
 // Plataformas y sus URLs
 const platforms = {
     youtube: "https://www.youtube.com/results?search_query=",
     tiktok: "https://www.tiktok.com/search?q=",
-    maps: "https://www.google.com/maps/search/"
+    maps: "https://www.google.com/maps/search/",
+    crono: "https://reloj-alarma.es/temporizador-"
 };
 
 // Función para limpiar la query y detectar plataforma
@@ -26,6 +28,10 @@ function parseQuery(query) {
     } else if (query.endsWith(" -m")) {
         detectedPlatform = 'maps';
         cleanedQuery = query.slice(0, -3);
+    } else if (query.endsWith(" -c")) {
+        detectedPlatform = 'crono';
+        cleanedQuery = query.slice(0, -3);
+        cleanedQuery = cleanedQuery + "-minutos";
     }
 
     return {
@@ -65,14 +71,14 @@ function initializeEventListeners() {
     btnYouTube.addEventListener('click', () => handleButtonClick('youtube'));
     btnTikTok.addEventListener('click', () => handleButtonClick('tiktok'));
     btnGoogleMaps.addEventListener('click', () => handleButtonClick('maps'));
+    btnCronoTimer.addEventListener('click', () => handleButtonClick('crono'));
 }
 
 // Iniciar cuando la página cargue
 document.addEventListener('DOMContentLoaded', initializeEventListeners);
 
-// Función para abrir la ventana centrada
-document.getElementById('open-center-popup').addEventListener('click', function() {
-    const width = 400;
+function AbrirPopUp(){
+    const width = 600;
     const height = 300;
     const left = Math.round((screen.width - width) / 2);
     const top = Math.round((screen.height - height) / 2);
@@ -85,4 +91,7 @@ document.getElementById('open-center-popup').addEventListener('click', function(
         left: left,
         top: top
     });
-});
+}
+
+// Función para abrir la ventana centrada
+document.getElementById('open-center-popup').addEventListener('click', AbrirPopUp);
