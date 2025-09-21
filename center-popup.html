@@ -1,52 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mac-like Search</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        .search-container {
-            background: rgba(255, 255, 255, 0.7); /* Añadida transparencia */
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 10px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            width: 400px;
-            max-width: 90%;
-        }
-        .search-icon {
-            color: #666;
-            margin-right: 10px;
-            font-size: 18px;
-        }
-        .search-input {
-            border: none;
-            background: transparent;
-            font-size: 18px;
-            color: #333;
-            width: 100%;
-            outline: none;
-            font-weight: 400;
-        }
-        .search-input::placeholder {
-            color: #999;
-        }
-    </style>
-</head>
-<body>
-    <div class="search-container">
-        <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" placeholder="Search...">
-    </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>HeriTech - FocusAPP</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Incluir Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <center class="p-4">
+      <!-- Agregar los círculos -->
+      <div class="circle-container m-4">
+        <div class="circle-black">
+          <div class="circle-white" id="eye"></div>
+        </div>
+      </div>
+
+      <input
+        class="input-text"
+        type="search"
+        autocomplete="off"
+        id="search-bar"
+        placeholder="¿Qué vamos a buscar hoy?"
+        autofocus
+      />
+
+      <!-- Contenedor de la grilla -->
+      <div class="row mt-3">
+        <!-- Fila 1 -->
+        <div class="col-12 mb-2">
+          <button class="btn btn-danger w-100" id="youtube-search">
+            <i class="fab fa-youtube"></i> YouTube
+          </button>
+        </div>
+
+        <div class="col-12 mb-2">
+          <button class="btn btn-dark w-100" id="tiktok-search">
+            <i class="fab fa-tiktok"></i> TikTok
+          </button>
+        </div>
+
+        <div class="col-12 mb-2">
+          <button class="btn btn-primary w-100" id="google-maps-search">
+            <i class="fas fa-map-marked-alt"></i> Maps
+          </button>
+        </div>
+
+        <div class="col-12 mb-2">
+          <button class="btn btn-primary w-100" id="crono-timer">
+            <i class="fa-solid fa-alarm-clock"></i> ⌛ CronoTimer ⌛
+          </button>
+        </div>
+
+        <div class="col-12 mb-2">
+          <button class="btn btn-dark w-100" id="open-center-popup">
+            <i class="fas fa-window-maximize"></i> Open Center Popup
+          </button>
+        </div>
+
+      </div>
+      <img class="logo" src="heritech_logo_black.png" alt="logo" />
+      <small>HT - FocusAPP</small>
+    </center>
+
+    <script src="script.js"></script>
+  </body>
 </html>

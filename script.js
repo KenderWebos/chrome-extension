@@ -78,8 +78,8 @@ function initializeEventListeners() {
 document.addEventListener('DOMContentLoaded', initializeEventListeners);
 
 function AbrirPopUp(){
-    const width = 600;
-    const height = 300;
+    const width = 400;
+    const height = 650;
     const left = Math.round((screen.width - width) / 2);
     const top = Math.round((screen.height - height) / 2);
 
