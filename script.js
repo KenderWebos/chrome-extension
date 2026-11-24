@@ -95,3 +95,20 @@ function AbrirPopUp(){
 
 // Función para abrir la ventana centrada
 document.getElementById('open-center-popup').addEventListener('click', AbrirPopUp);
+
+// Función para abrir el popup de logs
+document.getElementById('open-logs').addEventListener('click', () => {
+    const width = 600;
+    const height = 500;
+    const left = Math.round((screen.width - width) / 2);
+    const top = Math.round((screen.height - height) / 2);
+
+    chrome.windows.create({
+        url: chrome.runtime.getURL('logs-popup.html'),
+        type: 'popup',
+        width: width,
+        height: height,
+        left: left,
+        top: top
+    });
+});
